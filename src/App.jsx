@@ -1,37 +1,4 @@
-// import React, { useEffect } from 'react'
-// import "./App.css"
-// import Home from './pages/Home'
-// import {createBrowserRouter,RouterProvider} from "react-router-dom"
-// import MainNavigation from './components/MainNavigation'
-// import axios from "axios"
-// // const getAllRecipes=async()=>{
-// //   let allRecipes=[]
-// //   await axios.get("http://localhost:8080/recipe").then((res)=>{
-// //     allRecipes=res.data
-// //   })
-// //   return allRecipes;
-// // }
-// const getAllRecipes = async () => {
-//   console.log("📡 Fetching all recipes...");
-//   const res = await axios.get('http://localhost:8080/recipe');
-//   console.log("✅ Recipes fetched:", res.data);
-//   return res.data;
-// };
 
-
-// const router=createBrowserRouter([
-//   {path:"/",element:<MainNavigation/>,children:[{path:"/",element:<Home></Home>,loader:getAllRecipes}]}
-  
-// ])
-// function App() {
-//   return (
-//     <>
-//     <RouterProvider router={router}></RouterProvider>
-//     </>
-//   )
-// }
-
-// export default App
 
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -44,7 +11,7 @@ import EditRecipe from './pages/EditRecipe'
 
 const getAllRecipes = async () => {
   try {
-    const res = await axios.get('http://localhost:8080/recipe')
+    const res = await axios.get('https://food-recipe-backend-tfhp.onrender.com/recipe')
     return res.data
   } catch (err) {
     console.log(err);

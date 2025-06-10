@@ -92,7 +92,7 @@ If it doesn't find anything, it sets favItems to an empty array []*/
     }, [recipes])
 
     const onDelete = async (id) => {
-        await axios.delete(`http://localhost:8080/recipe/${id}`)
+        await axios.delete(`https://food-recipe-backend-tfhp.onrender.com/recipe/${id}`)
             .then((res) => console.log(res))
         setAllRecipes(recipes => recipes.filter(recipe => recipe._id !== id))
         let filterItem = favItems.filter(recipe => recipe._id !== id)
@@ -124,7 +124,7 @@ It flips the isFavRecipe boolean, but its main purpose here is just to trigger a
                     allRecipes?.map((item, index) => {
                         return (
                             <div key={index} className='card'onDoubleClick={()=>navigate(`/recipe/${item._id}`)}>
-                                 <img src={item.coverImage!=null?`http://localhost:8080/images/${item.coverImage}`:foodRecipe} width="120px" height="100px" alt="" />
+                                 <img src={item.coverImage!=null?`https://food-recipe-backend-tfhp.onrender.com/${item.coverImage}`:foodRecipe} width="120px" height="100px" alt="" />
                                 <div className='card-body'>
                                     <div className='title'>{item.title}</div>
                                     <div className='icons'>

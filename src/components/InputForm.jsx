@@ -11,7 +11,7 @@ function InputForm({setisOpen}) {
     const handleSubmit=async(e)=>{
         e.preventDefault()
         let endPoint=(isSignUp)?"signUp":"login"
-        await axios.post(`http://localhost:8080/${endPoint}`,{email,password}).then((res)=>{
+        await axios.post(`https://food-recipe-backend-tfhp.onrender.com/${endPoint}`,{email,password}).then((res)=>{
             localStorage.setItem("token",res.data.token)
             localStorage.setItem("user",JSON.stringify(res.data.user))
             setisOpen()
